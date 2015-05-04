@@ -1,0 +1,235 @@
+\documentclass{beamer}
+%\documentclass[handout,t]{beamer}
+
+\batchmode
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+\usepackage{amsmath,amssymb,enumerate,epsfig,bbm,calc,color,ifthen,capt-of}
+\usepackage{url} 
+\usepackage{hyperref} 
+\usepackage{geometry}
+%\usepackage[numbers]{natbib}
+\usepackage{bibentry,natbib}
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage{bigstrut}
+\usepackage{array}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%\usepackage{algpseudocode}
+\usepackage{float}
+
+\usetheme{Berlin}
+
+\newcommand{\setS}{\mathbf{G}}
+\newcommand{\comp}{C}
+\newcommand{\TranscodeIndicator}{P}
+\newcommand{\RequestingSeg}{\mathbf{K}}
+\newcommand{\TranscodeSet}{\mathbf{E}}
+\newcommand{\IdleComp}{I}
+\newcommand{\SegRepCost}{F}
+\newcommand{\Assign}{A}
+\newcommand{\ReqFromRegion}{J}
+\newcommand{\CDNRegions}{\mathbf{R}}
+\newcommand{\Users}{\mathbf{U}}
+\newcommand{\Redirect}{D}
+\newcommand{\RegionRepCost}{Z}
+\newcommand{\bandwidth}{W}
+\newcommand{\Version}{L}
+\newcommand{\USPref}{H}
+\newcommand{\ReqOfSeg}{Q}
+\newcommand{\SegQuality}{Y}
+\newcommand{\Bitrate}{B}
+
+\title{\LaTeX Beamer Slides Template for HKUST}
+\author{Alan Zhuang\\
+\href{mailto:qzhuang@ust.hk}{\nolinkurl{qzhuang@ust.hk}}\\
+}
+
+%\title{$k$NN Query over a Whole Internet Topology\\\Small{and interative IP clustering and splitting}}
+%\author{Alan Zhuang}
+\date{\today}
+\pgfdeclareimage[height=0.5cm]{ust-logo}{UST4C_L3.eps}
+\logo{\pgfuseimage{ust-logo}\hspace*{0.3cm}}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+\beamerdefaultoverlayspecification{<+->}
+% -----------------------------------------------------------------------------
+\begin{document}
+% -----------------------------------------------------------------------------
+\bibliographystyle{ieeetr}
+\nobibliography{IEEEabrv,ust-beamer.bib}
+%\nobibliography*%
+
+\frame{\titlepage}
+
+\section[Outline]{}
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\section{Title} 
+\begin{frame}\frametitle{Title} 
+	Each frame should have a title.
+\end{frame}
+\subsection{Subsection no.1.1  }
+\begin{frame} 
+	Without title somethink is missing. 
+\end{frame}
+
+
+\section{Lists} 
+\begin{frame}\frametitle{unnumbered lists}
+	\begin{itemize}
+		\item Introduction to  \LaTeX  
+		\item Course 2 
+		\item Termpapers and presentations with \LaTeX 
+		\item Beamer class
+	\end{itemize} 
+\end{frame}
+
+\begin{frame}\frametitle{lists with pause}
+	\begin{itemize}
+		\item Introduction to  \LaTeX \pause 
+		\item Course 2 \pause 
+		\item Termpapers and presentations with \LaTeX \pause 
+		\item Beamer class
+	\end{itemize} 
+\end{frame}
+
+\begin{frame}\frametitle{numbered lists without pause}
+	\begin{enumerate}
+		\item<1> Introduction to  \LaTeX  
+		\item<1> Course 2 
+		\item<1> Termpapers and presentations with \LaTeX 
+		\item<1> Beamer class
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{numbered lists with pause}
+	\begin{enumerate}
+		\item Introduction to  \LaTeX \pause 
+		\item Course 2 \pause 
+		\item Termpapers and presentations with \LaTeX \pause 
+		\item Beamer class
+	\end{enumerate}
+\end{frame}
+
+\section{Tables} 
+\begin{frame}\frametitle{Tables}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Date} & \textbf{Instructor} & \textbf{Title} \\
+		\hline
+		WS 04/05 & Sascha Frank & First steps with  \LaTeX  \\
+		\hline
+		SS 05 & Sascha Frank & \LaTeX \ Course serial \\
+		\hline
+	\end{tabular}
+\end{frame}
+
+\begin{frame}\frametitle{Tables with pause}
+	\begin{tabular}{c c c}
+		A & B & C \\ 
+		\pause 
+		1 & 2 & 3 \\  
+		\pause 
+		A & B & C \\ 
+	\end{tabular} 
+\end{frame}
+
+
+\section{Blocks}
+\begin{frame}\frametitle{blocs}
+	
+	\begin{block}{title of the bloc}
+		bloc text
+	\end{block}
+	
+	\begin{exampleblock}{title of the bloc}
+		bloc text
+	\end{exampleblock}
+	
+	
+	\begin{alertblock}{title of the bloc}
+		bloc text
+	\end{alertblock}
+\end{frame}
+
+\section{Others}
+\subsection{split screen}
+
+\begin{frame}\frametitle{splitting screen}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{itemize}
+				\item Beamer 
+				\item Beamer Class 
+				\item Beamer Class Latex 
+			\end{itemize}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{tabular}{|c|c|}
+				\hline
+				\textbf{Instructor} & \textbf{Title} \\
+				\hline
+				Sascha Frank &  \LaTeX \ Course 1 \\
+				\hline
+				Sascha Frank &  Course serial  \\
+				\hline
+			\end{tabular}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{Pictures}{Simple Graphics} 
+\begin{frame}\frametitle{pictures in latex beamer class}
+	\begin{figure}
+		\includegraphics[scale=1.0]{UST4C_L3} 
+		\caption{show an example picture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{joining picture and lists} 
+	\frametitle{pictures and lists in beamer class}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{itemize}
+				\item<1-> subject 1
+				\item<3-> subject 2
+				\item<5-> subject 3
+			\end{itemize}
+			\vspace{3cm} 
+		\end{column}
+		\begin{column}{5cm}
+			\begin{overprint}
+				\includegraphics<2>[width=5cm]{fig/mismatch-overtime}
+				\includegraphics<4>[width=5cm]{fig/server_cv_cdf}
+				\includegraphics<6>[width=5cm]{fig/sy-req-vs-seg}
+			\end{overprint}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{pictures need more space} 
+\begin{frame}[plain]
+	\frametitle{plain, or a way to get more space}
+	\begin{figure}
+		\includegraphics[scale=1.0]{UST4C_L3} 
+		\caption{show an example picture}
+	\end{figure}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+%\bibliographystyle{plainnat}
+%\nobibligography{slides}
+\end{document}
